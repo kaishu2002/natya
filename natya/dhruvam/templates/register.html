@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/reg.css' %}" type="text/css">
+</head>
+<body class="bg-img">
+  <div class="page-container">
+    <div class="register-container">
+    
+
+        <div class=" p-4 shadow-sm">
+            <div class="register-card-body">
+              <center>
+                  <div class="container d-flex justify-content-center align-items-center">
+                    <div class="register-form">
+                      <h2 class="text-center mb-4"><b>Register</b></h2>
+                      <form action="" method="post" class="register" enctype="multipart/form-data">
+                        {% csrf_token %}
+                          <div class="form-group">
+                          {{ form.as_p}}
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-block">Register</button>
+                      </form>
+                      <p class="text-center mt-3">Already have an account? <a href="/login">Login here</a>.</p>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  </center>
+                  </div>
+                  </div>
+                  
+                </body>
+                </html>

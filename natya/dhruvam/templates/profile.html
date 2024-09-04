@@ -1,0 +1,35 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+    
+</head>
+<body>
+    <div class="prof_container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <div class="image">
+                <div class="trick">
+                    {% if user.image %}
+                    <img src="{{ user.image.url }}" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 80px;">
+                {% else %}
+                <img src="{{ user.image.url }}" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 80px;">
+                {% endif %}
+                </div>
+            </div>
+            <br><br>
+            <p><strong></strong> {{ user.username }}</p>
+            <p><strong>Email Address:</strong> {{ user.email }}</p>
+            <p><strong>Phone:</strong> {{ user.phone }}</p>
+            <button type="submit" style="width: 200px; "><a href="/update_profile">UPDATE</a></button> <br><br>
+            <a href="/password_change_form" id="forgot-password">Reset Password</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

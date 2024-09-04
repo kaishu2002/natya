@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guru List</title>
+</head>
+<body>
+    <h1>Guru List</h1>
+    <ul>
+        {% for guru in gurus %}
+        <li>
+            <a href="{% url 'guru_detail' guru.pk %}">
+                {{ guru.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'guru_create' %}">Add New Guru</a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guru Detail</title>
+    <style>
+        .guru-container {
+            display: flex;
+            flex-direction: row;
+            margin: 20px;
+        }
+        .guru-image {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .guru-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .guru-details {
+            flex: 2;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="guru-container">
+        <!-- First Column: Guru Image -->
+        <div class="guru-image">
+            <img src="{{ guru.image.url }}" alt="{{ guru.username }}">
+        </div>
+        
+        <!-- Second Column: Guru Details -->
+        <div class="guru-details">
+            <h1>{{ guru.username }}</h1>
+            <p>Style: {{ guru.dance_style }}</p>
+            <p>Experience: {{ guru.experience }}</p>
+            <p>Journey: {{ guru.dance_specialization }}</p>
+            <p>Academic Details: {{ guru.profile_information }}</p>
+        </div>
+    </div>
+
+    <!-- Back to Guru List -->
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

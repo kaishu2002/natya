@@ -1,0 +1,78 @@
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header styling */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+}
+
+/* Form elements styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Form control styling */
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+   
+}
+
+/* Button hover effect */
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+   
+}
+
+/* Adjusting select element styling */
+select.form-control {
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+}
+
+/* Additional spacing for form elements */
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive styling */
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Background image styles */
+.bg-img {
+    background-image: url('../images/chilaka.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 180vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,38 @@
+<html>
+    <head>
+<style>
+    form{
+        padding: 100px;
+        background-color: teal;
+        width: 500px;
+        height: 740px;
+        margin-left: 400px;
+        border-radius: 50px;
+    }
+    form input,form button ,form textarea{
+        display: block;
+        padding: 10px;
+        margin: 40px;
+        width: 400px;
+    }
+    input,button,textarea{
+        border-radius: 30px;
+    }
+
+</style>
+    </head>
+    <body>
+        <h1>hoi </h1>
+        <form action="" method="post">
+            <h1>Contact</h1>
+            {% csrf_token %}
+            <!-- <input type="text" name="name" placeholder="enter the name">
+            <input type="email" name="email" placeholder="enter the email">
+            <input type="text" name="subject" placeholder="enter the subject">
+            <textarea name="msg" id="" placeholder="enter the  Message"></textarea> -->
+
+            {{ cnnn.as_p }}
+            <button type="submit" value="submit" name="" id="">SUBMIT</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+
+/* login.css */
+
+/* General styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-img {
+    background-image: url("../images/chilaka.jpeg");
+    min-height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.container {
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 80px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #000;
+    padding-top: 15px;
+    margin-top: 30px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.contact-form .form-group label {
+    font-weight: bold;
+    color: #495057;
+}
+
+.contact-form .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* Make input fields slightly transparent */
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.25rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #0056b3;
+}

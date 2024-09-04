@@ -1,0 +1,93 @@
+/* login section */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+   
+}
+
+.login-container {
+    text-align: center;
+    padding: 90px;
+    margin-top: 120px;
+    border: 1px solid #3d13d5;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background */
+}
+
+.bg-img {
+    background-image: url("../images/chilaka.jpeg");
+    min-height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.login-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold; /* Example: make the heading bolder */
+}
+.form-group {
+    width: 90%;
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center input within its container */
+}
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    text-align: center; /* Center text within the input field */
+}
+button {
+    padding: 10px 20px; /* Add some padding to the button */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center; /* Center button text */
+}
+button:hover {
+    background-color: #0056b3;
+}
+.psw {
+    margin-top: 10px;
+    text-align: center; /* Center the "Forgot password?" text */
+}
+.psw a, p a {
+    color: #007BFF;
+}
+.login-form {
+    width: 100%;
+    display: flex; /* Use flexbox for centering the form */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the form within its container */
+}
+.form-control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+
+
+
