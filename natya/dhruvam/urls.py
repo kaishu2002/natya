@@ -27,4 +27,6 @@ urlpatterns = [
     path('guru_detail/<int:pk>/', GuruDetailView.as_view(), name='guru_detail'),
     path('guru_create/<int:pk>/', GuruCreatView.as_view(), name='guru_create'),
     path('bharatanatyam', Bharatanatyamview.as_view(), name='Bharatanatyam'),
+    path('mohiniyattam/', MohiniyattamView.as_view(), name='mohiniyattamview'),
+
 ]

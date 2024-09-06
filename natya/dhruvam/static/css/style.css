@@ -94,7 +94,6 @@ video {
     color: #ffffff;
     text-decoration: none;
 }
-
 .about-section {
     margin-left:0px;
     padding: 50px;
@@ -159,12 +158,9 @@ video {
 .button:hover {
     background-color: #9f9bcf81;
 }
-
 .carousel-item img {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-    height: auto;
+    object-fit: cover;
+    height: 400px; /* Adjust as per your design */
 }
 
 html, body {

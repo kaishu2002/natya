@@ -328,3 +328,7 @@ class ContactUser(TemplateView):
 
 class Bharatanatyamview(TemplateView):
     template_name = 'bharatanatyam.html'
+
+
+class  MohiniyattamView(TemplateView):
+    template_name = 'mohiniyattam.html'
