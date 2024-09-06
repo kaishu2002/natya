@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharatanatyam - Classical Dance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header, section, footer {
+            margin-bottom: 20px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 1;
+            margin: 10px;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        #carousel-section {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-inner img {
+    width: 100%;
+    max-height: 100%;  /* Limit the maximum height without stretching */
+    object-fit: cover; /* Will crop a bit but fill the space */
+    object-position: center;
+}
+
+
+    </style>
+    <!-- Add Bootstrap CSS for carousel functionality -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section id="carousel-section">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Bharatanatyam"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Mohiniyattam"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{% static 'images/Bharata.jpg' %}" alt="Bharatanatyam" style="width: 60%; height: auto; display: block; margin: 0 auto;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bharatanatyam</h5>
+                        <p>Bharatanatyam is one of the oldest classical dance forms in India, with a rich history that dates back over 2,000 years. It is believed to have originated in the temples of Tamil Nadu, where it was performed as a form of worship by the devadasis, or temple dancers. Over time, Bharatanatyam evolved into a highly stylized and intricate dance form that is now recognized as one of the most popular classical dance styles in India.</p>
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <img src="{% static 'images/mohiniyattam.jpg' %}" class="d-block w-100" alt="Mohiniyattam">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Mohiniyattam</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="introduction" class="my-5">
+        <div class="container">
+            <h2 class="text-center">Introduction</h2>
+            <p class="lead">Bharatanatyam is one of the most ancient and prominent classical dance forms of India, originating from Tamil Nadu. Steeped in tradition, Bharatanatyam combines music, rhythm, and expression to narrate stories from Hindu mythology. The word "Bharatanatyam" is a compound of 'Bha', meaning Bhava (expression), 'Ra', meaning Raga (melody), 'Ta', meaning Tala (rhythm), and 'Natyam', meaning dance.</p>
+        </div>
+    </section>
+
+    <section id="history" class="my-5">
+        <div class="container">
+            <h2 class="text-center">History</h2>
+            <p class="lead">Bharatanatyam has a rich historical background, with roots tracing back over 2000 years. It was traditionally performed in the temples of Tamil Nadu by Devadasis, temple dancers dedicated to worship and service. Over time, it evolved into a sophisticated art form that is celebrated globally today.</p>
+            <p>Bharatanatyam traces its origins over 2,000 years ago in the temples of Tamil Nadu. It was originally performed by Devadasis, women dedicated to serving temple deities through dance and music. These temple dancers were custodians of sacred dance rituals, offering their art as an expression of devotion.</p>
+            <p>In the 19th and early 20th centuries, Bharatanatyam underwent a transformation. Visionary dancers like Rukmini Devi Arundale and Balasaraswati revived and modernized Bharatanatyam, bringing it from temples to theater stages, preserving its spiritual and artistic integrity. Today, it is celebrated worldwide as an essential part of India's cultural heritage.</p>
+        </div>
+    </section>
+
+    <section id="style-and-features" class="my-5">
+        <div class="container">
+            <h2 class="text-center">Style and Features</h2>
+            <p class="lead">Bharatanatyam is characterized by its fixed upper torso, bent legs, and intricate footwork combined with expressive hand gestures (mudras) and facial expressions. The dance embodies a perfect balance of rhythm, music, and storytelling, making it a holistic and powerful form of expression.</p>
+        </div>
+    </section>
+
+    <section id="famous-practitioners" class="my-5">
+        <div class="container">
+            <h2 class="text-center">Famous Practitioners</h2>
+            <p class="lead">Renowned Bharatanatyam practitioners include Rukmini Devi Arundale, Balasaraswati, Yamini Krishnamurthy, Malavika Sarukkai, and Alarmel Valli. They have significantly contributed to taking Bharatanatyam to a global stage.</p>
+        </div>
+    </section>
+
+    <section id="media" class="my-5">
+        <div class="container">
+            <h2 class="text-center">Media</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{% static 'images/bharatanatyam.jpg' %}" class="d-block w-100" alt="Bharatanatyam">
+                </div>
+                <div class="col-md-6">
+                    <video controls>
+                        <source src="{% static 'videos/your-video.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center my-5">
+        <p>&copy; 2024 Classical Dance Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Add Bootstrap JS for carousel functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -31,7 +31,7 @@
         
         <!-- Second Column: Guru Details -->
         <div class="guru-details">
-            <h1>{{ guru.username }}</h1>
+            <h1>{{ guru.username|capfirst }}</h1>
             <p>Style: {{ guru.dance_style }}</p>
             <p>Experience: {{ guru.experience }}</p>
             <p>Journey: {{ guru.dance_specialization }}</p>

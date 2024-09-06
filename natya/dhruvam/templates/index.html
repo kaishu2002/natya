@@ -19,13 +19,15 @@
 <body>
     <div class="container text-center mb-5">
         <video muted disableRemotePlayback autoplay loop width="100%">
-            <source src="{% static 'images/dance.webm' %}" type="video/webm">
+            <source src="{% static 'images/dance2.mp4' %}" type="video/webm">
         </video>
         
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <img src="{% static 'images/logo123.png' %}" alt="DHRUVAM Logo" style="width: 20%; height: 20%;" class="mr-1">
+                    <img src="{% static 'images/logo2.png' %}" alt="DHRUVAM Logo" style="width: 20%; height: 100px;
+                    background-color: transparent;
+                    border-radius: 260px;" class="mr-1"><br>
                     <h5 class="brand">DHRUVAM</h5>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +95,7 @@
         </nav>
         <h2 class="container head-h2">The Sounds of Bells, The Steps From The Beats In The Distant Dreams</h2>
     </div>
-    <div class="about-section">
+    <div class="about-section"  style"=margin-top: 100px;">
         <h2 style="text-align:center">Our Team</h2>
         <div class="container">
             <div class="row">
@@ -148,7 +150,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Bharatanatyam</a>
+                            <a class="nav-link active" aria-current="page" href="/bharatanatyam">Bharatanatyam</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Mohiniyattam</a>
@@ -167,20 +169,23 @@
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Mohiniyattam"></button>
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Kuchipudi"></button>
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Kathak"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Odissi"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="{% static 'images/bharata.jpg' %}" class="d-block w-100" alt="Bharatanatyam">
+                            <img src="{% static 'images/bharatanatyam.jpg' %}" class="d-block w-100" alt="Bharatanatyam">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Bharatanatyam</h5>
                                 <p>Bharatanatyam is one of the oldest classical dance forms in India, with a rich history that dates back over 2,000 years. It is believed to have originated in the temples of Tamil Nadu, where it was performed as a form of worship by the devadasis, or temple dancers. Over time, Bharatanatyam evolved into a highly stylized and intricate dance form that is now recognized as one of the most popular classical dance styles in India.</p>
+                                <button type="button" class="btn btn-outline-primary">View Details</button>
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
-                            <img src="{% static 'images/mohiniyattam.jpeg' %}" class="d-block w-100" alt="Mohiniyattam">
+                            <img src="{% static 'images/Mohini.jpg' %}" class="d-block w-100" alt="Mohiniyattam">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Mohiniyattam</h5>
                                 <p>Mohiniyattam is a lasya subgenre of dance, performed in the Kaisiki vritti (graceful style), as discussed in ancient Indian performance arts texts such as the Natya Shastra. More specifically, it is a dance that excels in Ekaharya Abhinaya form, that is a solo expressive dance performance aided by singing and music.</p>
+                                <button type="button" class="btn btn-outline-primary">View Details</button>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -188,13 +193,23 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Kuchipudi</h5>
                                 <p>Kuchipudi is one of the eight major Indian classical dances. It originates from a village named Kuchipudi in the Indian state of Andhra Pradesh. Kuchipudi is a dance-drama performance, with its roots in the ancient Hindu Sanskrit text of Natya Shastra.</p>
+                                <button type="button" class="btn btn-outline-primary">View Details</button>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="{% static 'images/kathak.jpg' %}" class="d-block w-100" alt="Kathak">
+                            <img src="{% static 'images/kathak.jpeg' %}" class="d-block w-100" alt="Kathak">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Kathak</h5>
                                 <p>Kathak is one of the nine major forms of Indian classical dance. Its origin is attributed to the traveling bards in ancient northern India known as Kathakars, who communicated stories from the Hindu epics and mythology through dance, songs, and music.</p>
+                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/odissi.jpg' %}" class="d-block w-100" alt="Odissi">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Odissi</h5>
+                                <p>Odissi is one of the oldest classical dance forms in India, with roots tracing back to the temples of Odisha. It is a highly graceful and lyrical dance style that beautifully blends movement, music, and emotion. Traditionally performed as an offering to the deities in temples, Odissi has evolved over time into a performance art seen on stages around the world.</p>
+                                <button type="button" class="btn btn-outline-primary">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -233,11 +248,11 @@
                     <div class="carousel-item {% if forloop.first %}active{% endif %}" style="max-width: 700px; margin: auto;">
                         {% if guru.image %}
                             <a href="{% url 'guru_detail' guru.id %}">
-                                <img src="{{ guru.image.url }}" class="d-block w-100 guru-image" alt="{{ guru.name }}">
+                                <img src="{{ guru.image.url }}" class="d-block w-100 guru-image" alt="{{ guru.name }}" style="height: 500px;">
                             </a>
                         {% endif %}
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ guru.username }}</h5>
+                            <h5>{{ guru.username|capfirst }}</h5>
                             <p>{{ guru.dance_specialization }}</p>
                         </div>
                     </div>

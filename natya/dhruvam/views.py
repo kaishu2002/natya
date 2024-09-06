@@ -39,6 +39,7 @@ def register(request):
                     k= form.save(commit=False)
                     k.password=make_password(form.cleaned_data['password'])
                     k.usertype=0
+                    k.is_active=True
                     k.save()
                     messages.success(request, 'Your registration has been successful! You can login now.')
                     return redirect('/login')
@@ -322,3 +323,8 @@ class ContactUser(TemplateView):
         context = super().get_context_data(**kwargs)
         context[self.context_object_name] = self.form_class()
         return context
+    
+
+
+class Bharatanatyamview(TemplateView):
+    template_name = 'bharatanatyam.html'
