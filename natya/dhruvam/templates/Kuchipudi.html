@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuchipudi - Classical Dance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header, section, footer {
+            margin-bottom: 20px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            flex: 1;
+            margin: 10px;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        #carousel-section {
+            width: 100%;
+            overflow: hidden;
+            
+        }
+        .carousel-inner img {
+    width: 100%;
+    max-height: 100%;  /* Limit the maximum height without stretching */
+    object-fit: cover; /* Will crop a bit but fill the space */
+    object-position: center;
+}
+
+.an:hover{
+    color: black;
+    animation: mymove 5s infinite;
+    background-color:white;
+   
+}
+.img{
+    margin-left: 50px;
+    align-items: center;
+}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* adjust the background color as needed */
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+    </style>
+    <!-- Add Bootstrap CSS for carousel functionality -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section id="carousel-section">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Bharatanatyam"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Mohiniyattam"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{% static 'images/Kuchipudi.jpg' %}" class="d-block w-100" alt="Bharatanatyam"style="width: 100px;height: 700px;">
+                    <div class="carousel-caption d-none d-md-block">
+                       <div class="an"> <h5>Kuchipudi</h5>
+                        <p>Kuchipudi, one of the eight classical dance forms of India, originated from the Indian state of Andhra Pradesh. Known for its graceful movements, intricate footwork, and expressive storytelling, Kuchipudi is a dance-drama tradition that blends dance, music, and acting. The dance form often narrates tales from Hindu mythology, particularly the epics of Ramayana, Mahabharata, and Bhagavatam. Performers wear elaborate costumes and makeup, using their body language, facial expressions, and hand gestures (mudras) to communicate emotions and convey the essence of the story. Traditionally, Kuchipudi was performed as a dance-drama by male artists, but today, both men and women practice and perform this art form worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/ku.jpg' %}" class="d-block w-100" alt="Mohiniyattam"style="width: 100px;height: 700px;">
+                    
+                </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="introduction">
+        <div class="row p-5">
+            <div class="col-md-5">
+                <div class="img">
+                    <img src="{% static 'images/mudra.jpg' %}" class="rounded-circle">
+                    <center>
+                    <h3>mudra hand gestures</h3>
+                    <p>NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.</p>
+                </center>
+                    <div class="card border-transparent" style="margin-left: 50px; width: 500px; height: 500px; border-radius: 10%;">
+                        <img src="{% static 'images/ku1.jpg' %}" style=" height: 600px; width: 500px; border-radius: 10%;" alt="Two dancers performing a classical South Indian dance, one male and one female, in traditional attire" class="card-img">
+                        <div class="card-text">
+                            <center><a href="{% url 'class_detail' 2 %}">
+                                <button class="bg-white text-pink-500 font-semibold py-2 px-4 border border-pink-500 rounded hover:bg-pink-500 hover:text-white">
+                                    View Video CLasses
+                                  </button>
+                              </a></center>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+       
+            <div class="col-md-6">
+                <h2 class="text-center">Introduction</h2>
+                <p class="">Kuchipudi is a classical dance form from the Indian state of Andhra Pradesh, known for its graceful movements, dramatic storytelling, and expressive gestures. Rooted in the ancient Sanskrit text Natya Shastra, Kuchipudi blends both dance and drama, often incorporating intricate footwork, graceful hand movements, and expressive facial expressions. Traditionally performed as dance dramas, this art form is characterized by the portrayal of mythological stories, where dancers take on multiple roles through dynamic choreography and vibrant costumes. Over time, Kuchipudi has evolved to include solo performances, while retaining its rich heritage and narrative strength..</p>
+                <h2 class="text-center">History</h2>
+                <p class="">Kuchipudi, a classical dance form from the Indian state of Andhra Pradesh, has a rich and vibrant history. It traces its origins to ancient Sanskrit texts and temple traditions, with roots in dance, drama, and music. Traditionally performed as dance dramas known as Yakshagana, Kuchipudi evolved as a combination of expressive dance (abhinaya), rhythmic movements, and devotional themes..</p>
+                <p class="">The dance style was formally systematized by Siddhendra Yogi in the 17th century, who redefined it with a more devotional purpose, emphasizing stories from Hindu mythology, particularly tales of Lord Krishna. Initially, only male Brahmin performers participated in Kuchipudi, even portraying female roles, but over time, women became integral to the dance form..</p>
+                <p class="">Kuchipudi is characterized by swift, flowing movements, intricate footwork, and dramatic storytelling through gestures and facial expressions. Its performances often begin with an invocation, followed by pure dance sequences, and conclude with an expressive portrayal of mythological stories, making it both a spiritual and artistic experience</p>
+            
+                <h2 class="text-center">Style and Features</h2>
+                <p class=""> Kuchipudi is a classical dance form from the Indian state of Andhra Pradesh, known for its graceful movements, vibrant costumes, and dramatic storytelling. It originated as a dance-drama tradition performed by male Brahmin dancers in village settings. Over time, it has evolved into a solo and group performance art that is now practiced by both men and women</p>
+                <h2 class="text-center">Famous Practitioners</h2>
+                <p class="">Kuchipudi, a classical dance form from Andhra Pradesh, has been shaped by several legendary practitioners. Vedantam Lakshminarayana Sastry, a pioneer, played a key role in reviving the tradition of male dancers. Yamini Krishnamurthy, celebrated for her grace and expressive abhinaya, has helped popularize Kuchipudi internationally. Siddhendra Yogi, the founder, is remembered for transforming the dance form into a devotional art dedicated to Lord Krishna. Vempati Chinna Satyam, a choreographer and guru, is known for codifying Kuchipudi techniques and establishing it as a globally recognized classical art. These stalwarts, along with many others, continue to inspire generations of Kuchipudi dancers.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="about-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Us Section on the Left -->
+                    <div class="col-md-3 col-sm-12 text-start">
+                        <h4>Contact Us</h4>
+                        <p>Email: contact@example.com</p>
+                        <p>Phone: +123 456 7890</p>
+                        <p>Address: 123 Street Name, City, Country</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center d-flex flex-column justify-content-center align-items-center">
+                        <h3>About Us</h3>
+                        <p>NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-end">
+                        <h4>Follow Us</h4>
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/Facebook.jpg' %}" alt="Facebook" style="width: 24px;">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/instagram.jpg' %}" alt="Instagram" style="width: 24px;">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/twitter.jpg' %}" alt="Twitter" style="width: 24px;">
+                        </a>
+                    </div>
+
+    <!-- Add Bootstrap JS for carousel functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

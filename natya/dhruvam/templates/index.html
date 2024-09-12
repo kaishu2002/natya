@@ -57,7 +57,20 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">  
                             <li><a href="/">Home</a></li>
                             <li><a href="/about">About</a></li>
-                            <li><a href="/viewusers">View Users</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Views Users
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                  <li>
+                                    <a class="dropdown-item" href="{% url 'views_users' 0 %}">View Users</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item" href="{% url 'views_users' 2 %}">View Gurus</a>
+                                  </li>
+                                </ul>
+                              </li>
+                             
                             <li><a href="/approve_gurus">Approval</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>
@@ -66,7 +79,8 @@
                          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/addclass">Addclass</a></li>
+                            <li><a href="/add_class">Add Class</a></li>
+                            <li><a href="/class_details">Added Class</a></li>
                             <li><a href="/profile">Profile</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>  
@@ -154,13 +168,16 @@
                             <a class="nav-link active" aria-current="page" href="/bharatanatyam">Bharatanatyam</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/ mohiniyattam">Mohiniyattam</a>
+                            <a class="nav-link" href="/mohiniyattam">Mohiniyattam</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kuchipudi</a>
+                            <a class="nav-link" href="/kuchipudi">Kuchipudi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kathak</a>
+                            <a class="nav-link" href="/kathak">Kathak</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/odissi">Odissi</a>
                         </li>
                     </ul>
                 </div>
@@ -178,7 +195,8 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Bharatanatyam</h5>
                                 <p>Bharatanatyam is one of the oldest classical dance forms in India, with a rich history that dates back over 2,000 years. It is believed to have originated in the temples of Tamil Nadu, where it was performed as a form of worship by the devadasis, or temple dancers. Over time, Bharatanatyam evolved into a highly stylized and intricate dance form that is now recognized as one of the most popular classical dance styles in India.</p>
-                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                                <a class="btn btn-outline-primary" href="/bharatanatyam">View Details</a>
+
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
@@ -186,7 +204,9 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Mohiniyattam</h5>
                                 <p>Mohiniyattam is a lasya subgenre of dance, performed in the Kaisiki vritti (graceful style), as discussed in ancient Indian performance arts texts such as the Natya Shastra. More specifically, it is a dance that excels in Ekaharya Abhinaya form, that is a solo expressive dance performance aided by singing and music.</p>
-                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                                <a class="btn btn-outline-primary" href="/mohiniyattam">View Details</a>
+
+
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -194,7 +214,8 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Kuchipudi</h5>
                                 <p>Kuchipudi is one of the eight major Indian classical dances. It originates from a village named Kuchipudi in the Indian state of Andhra Pradesh. Kuchipudi is a dance-drama performance, with its roots in the ancient Hindu Sanskrit text of Natya Shastra.</p>
-                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                                <a class="btn btn-outline-primary" href="/kuchipudi">View Details</a>
+
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -202,7 +223,8 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Kathak</h5>
                                 <p>Kathak is one of the nine major forms of Indian classical dance. Its origin is attributed to the traveling bards in ancient northern India known as Kathakars, who communicated stories from the Hindu epics and mythology through dance, songs, and music.</p>
-                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                                <a class="btn btn-outline-primary" href="/kathak">View Details</a>
+
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -210,7 +232,8 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Odissi</h5>
                                 <p>Odissi is one of the oldest classical dance forms in India, with roots tracing back to the temples of Odisha. It is a highly graceful and lyrical dance style that beautifully blends movement, music, and emotion. Traditionally performed as an offering to the deities in temples, Odissi has evolved over time into a performance art seen on stages around the world.</p>
-                                <button type="button" class="btn btn-outline-primary">View Details</button>
+                                <a class="btn btn-outline-primary" href="/odissi">View Details</a>
+
                             </div>
                         </div>
                     </div>

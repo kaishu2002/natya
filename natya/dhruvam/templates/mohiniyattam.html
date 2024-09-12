@@ -119,20 +119,13 @@
                     <p>Mohiniyattam is known for its elegant hand gestures, which are used to express various emotions and narrate stories. These gestures are an integral part of the dance, contributing to its storytelling aspect.</p>
                     </center>
                     <div class="card border-transparent" style="margin-left: 50px; width: 500px; height: 500px; border-radius: 10%;">
-                        <img src="{% static 'images/mohiniy.jpg' %}" style="height: 600px; width: 500px; border-radius: 10%;" alt="Mohiniyattam Dancer" class="card-img">
+                        <img src="{% static 'images/mo1.jpg' %}" style="height: 600px; width: 500px; border-radius: 10%;" alt="Mohiniyattam Dancer" class="card-img">
                         <div class="card-text">
-                          <div class="font-bold text-xl mb-2">
-                            Graceful Movements of Mohiniyattam
-                          </div>
-                          <p class="text-gray-700 text-base mb-2">
-                            Renowned Dancer - Sunanda Nair
-                          </p>
-                          <p class="text-gray-700 text-base">
-                            Sunanda Nair, a well-known exponent of Mohiniyattam, brings out the grace and elegance of this classical dance form.
-                          </p>
-                          <button class="bg-white text-pink-500 font-semibold py-2 px-4 border border-pink-500 rounded hover:bg-pink-500 hover:text-white">
-                            View details
-                          </button>
+                            <center><a href="{% url 'class_detail' 1 %}">
+                                <button class="bg-white text-pink-500 font-semibold py-2 px-4 border border-pink-500 rounded hover:bg-pink-500 hover:text-white">
+                                    View Video CLasses
+                                  </button>
+                              </a></center>
                         </div>
                     </div>
                 </div>
@@ -173,6 +166,22 @@
                         <p>Email: contact@example.com</p>
                         <p>Phone: +123 456 7890</p>
                         <p>Address: 123 Street Name, City, Country</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center d-flex flex-column justify-content-center align-items-center">
+                        <h3>About Us</h3>
+                        <p>NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-end">
+                        <h4>Follow Us</h4>
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/Facebook.jpg' %}" alt="Facebook" style="width: 24px;">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/instagram.jpg' %}" alt="Instagram" style="width: 24px;">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                            <img src="{% static 'images/twitter.jpg' %}" alt="Twitter" style="width: 24px;">
+                        </a>
                     </div>
                    </div>
                    </div>

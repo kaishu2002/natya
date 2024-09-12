@@ -1,0 +1,49 @@
+{% load static %}
+
+<style>
+  .form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100px;
+  }
+
+  .form-container p {
+    margin: 10px 0;
+  }
+</style>
+
+<h2>Add New Dance Class</h2>
+
+<div class="form-container">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Class</button>
+  </form>
+</div>

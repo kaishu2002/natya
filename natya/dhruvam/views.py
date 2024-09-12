@@ -10,6 +10,8 @@ from django.contrib.auth import logout as auth_logout
 from django.urls import reverse_lazy
 from . forms import*
 from .models import *
+from django.urls import reverse
+
 # Create your views here.
 
 class IndexView(TemplateView):
@@ -161,31 +163,12 @@ def Logout(request):
     auth.logout(request)                
     return redirect('/')
 
+def view_users_and_gurus(request,ut):
+    # Fetching all registered users and gurus, assuming there's a 'usertype' field in the Register model
+    users = Register.objects.filter(usertype=ut)
+    return render(request, 'views_users.html',{'users' :users})
 
 
-class ViewUsersAndGurus(TemplateView):
-    template_name = 'views_users.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        
-        # Fetch all users and gurus
-        context['users'] = Register.objects.filter(usertype=0)
-        context['gurus'] = Register.objects.filter(usertype=2)
-        
-        # Check if a specific user or guru ID is provided in the URL
-        user_id = self.kwargs.get('user_id')
-        guru_id = self.kwargs.get('guru_id')
-        
-        if user_id:
-            # Fetch the specific user registration
-            context['specific_user'] = get_object_or_404(Register, id=user_id, usertype=0)
-        if guru_id:
-            # Fetch the specific guru registration
-            context['specific_guru'] = get_object_or_404(Register, id=guru_id, usertype=2)
-        
-        return context
-    
 class SelectViews(TemplateView):
     template_name = 'page.html'
 
@@ -332,3 +315,56 @@ class Bharatanatyamview(TemplateView):
 
 class  MohiniyattamView(TemplateView):
     template_name = 'mohiniyattam.html'
+
+class  kuchipudiView(TemplateView):
+    template_name = 'kuchipudi.html'
+
+
+class  kathakView(TemplateView):
+    template_name = 'kathak.html'
+
+
+
+class  odissiView(TemplateView):
+    template_name = 'odissi.html'
+
+class AddClassView(CreateView):
+    model = DanceClass
+    form_class = DanceClassForm
+    template_name = 'add_class.html'
+
+    def form_valid(self, form):
+        # Manually set the guru ID
+        form.instance.guru = self.request.user  # Assuming the user is the guru
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('index') 
+    
+def class_detail_view(request):
+    # Fetch the currently logged-in user
+    user = request.user
+    
+    # Filter classes added by the current user (guru)
+    classes_by_user = DanceClass.objects.filter(guru=user)
+    
+    return render(request, 'class_details.html', {
+        'classes_by_user': classes_by_user
+    })
+
+def class_detail(request,value):
+    if value == 0:
+        style="bharatanatyam"
+    elif value == 1:
+        style="mohiniyattam"
+    elif value == 2:
+        style="kuchipudi"
+    elif value == 3:
+        style="kathak"
+    elif value == 4:
+        style="odissi"
+    else:
+        style=""
+        
+    classes = DanceClass.objects.filter(dance_style=style)
+    return render(request, 'class_detail.html', {'classes': classes})

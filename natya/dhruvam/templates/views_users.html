@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/views.css' %}" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>View Users</title>
+    <title>View Users & Gurus</title>
 </head>
 <body>
     
-    <div class="row">
+    <div class="container">
+        <h1 class="mt-5">Manage Users & Gurus</h1>
         
-        <div class=" col-md-6 ">
-            <table border="3">
-                <h1>Registered Users</h1>
+        <!-- Users Section -->
+        <div id="users" class="content-section active">
+            <h2>Registered Users</h2>
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Username</th>
@@ -32,33 +34,12 @@
                 </tbody>
             </table>
         </div>
-        
-        <div class="col-md-6">   
-            <table border="3">
-                <h1>Registered Guru</h1>
-                <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for guru in gurus %}
-                    <tr>
-                        <td>{{ guru.username }}</td>
-                        <td>{{ guru.email }}</td>
-                        <td>
-                            <a href=""><i class="fa fa-eye"></i></a>
-                            <a href=""><i class="fa fa-check"></i></a>
-                            <a href=""><i class="fa fa-close"></i></a>
-                            
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+    <!-- Full version of jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>

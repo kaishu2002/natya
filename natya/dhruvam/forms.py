@@ -140,3 +140,15 @@ class ContactForm(forms.ModelForm):
         widgets = {
            
         }
+
+class DanceClassForm(forms.ModelForm):
+    class Meta:
+        model = DanceClass
+        fields = ['title', 'video_title', 'video_link', 'image', 'dance_style', 'description']
+        widgets = {
+            'title': forms.Textarea(attrs={'rows': 2, 'cols': 65}),
+            'video_title': forms.Textarea(attrs={'rows': 5, 'cols': 65}),
+            'dance_style': forms.Select(choices=DanceClass.DANCE_STYLES),
+            'description': forms.Textarea(attrs={'rows': 8, 'cols': 65}),
+            'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }

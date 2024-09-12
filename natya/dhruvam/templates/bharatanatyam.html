@@ -125,20 +125,13 @@ p{
                     <p>NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.</p>
                 </center>
                     <div class="card border-transparent" style="margin-left: 50px; width: 500px; height: 500px; border-radius: 10%;">
-                        <img src="{% static 'images/sundara-syama.jpg' %}" style=" height: 600px; width: 500px; border-radius: 10%;" alt="Two dancers performing a classical South Indian dance, one male and one female, in traditional attire" class="card-img">
+                        <img src="{% static 'images/bn2.jpg' %}" style=" height: 600px; width: 500px; border-radius: 10%;" alt="Two dancers performing a classical South Indian dance, one male and one female, in traditional attire" class="card-img">
                         <div class="card-text">
-                          <div class="font-bold text-xl mb-2">
-                            Sringara Lahari
-                          </div>
-                          <p class="text-gray-700 text-base mb-2">
-                            Rama Vaidyanathan
-                          </p>
-                          <p class="text-gray-700 text-base">
-                            Sringara Lehari is a South Indian Classical Keerthana choreographed by Rama...
-                          </p>
-                          <button class="bg-white text-pink-500 font-semibold py-2 px-4 border border-pink-500 rounded hover:bg-pink-500 hover:text-white">
-                            View details
-                          </button>
+                          <center><a href="{% url 'class_detail' 0 %}">
+                            <button class="bg-white text-pink-500 font-semibold py-2 px-4 border border-pink-500 rounded hover:bg-pink-500 hover:text-white">
+                                View Video CLasses
+                              </button>
+                          </a></center>
                         </div>
                       </div>
                 </div>
@@ -172,6 +165,10 @@ p{
                         <p>Email: contact@example.com</p>
                         <p>Phone: +123 456 7890</p>
                         <p>Address: 123 Street Name, City, Country</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-center d-flex flex-column justify-content-center align-items-center">
+                        <h3>About Us</h3>
+                        <p>NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.</p>
                     </div>
                     <div class="col-md-3 col-sm-12 text-end">
                         <h4>Follow Us</h4>

@@ -40,3 +40,22 @@ class Contact(models.Model):
     email=models.CharField(max_length=200,null=True)
     subject=models.CharField(max_length=200,null=True)
     message=models.TextField(null=True)
+
+
+
+class DanceClass(models.Model):
+    DANCE_STYLES = [
+        ('bharatanatyam', 'Bharatanatyam'),
+        ('mohiniyattam', 'Mohiniyattam'),
+        ('kuchipudi', 'Kuchipudi'),
+        ('kathak', 'Kathak'),
+        ('odissi', 'Odissi'),
+    ]
+
+    title = models.CharField(max_length=200)
+    video_title = models.TextField(max_length=1000)
+    video_link = models.FileField(upload_to='videos/')
+    dance_style = models.CharField(max_length=50, choices=DANCE_STYLES)
+    description = models.TextField()
+    image = models.ImageField(upload_to='dance_class_images/', default='')
+    guru = models.ForeignKey(Register, on_delete=models.CASCADE, default='')
