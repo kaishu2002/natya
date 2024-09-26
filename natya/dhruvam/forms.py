@@ -58,12 +58,12 @@ class GuruRegistrationForm(forms.ModelForm):
     
     dance_style = forms.ChoiceField(
         choices=DANCE_STYLE_CHOICES,
-        widget=forms.Select(attrs={'class': 'form-control'}),
+        widget=forms.Select(attrs={'class': 'form-control text-dark'}),
         label="Select Dance Style",
     )
     dance_specialization = forms.ChoiceField(
         choices=Register.SPECIALIZATIONS,
-        widget= forms.Select(attrs={'class':'select-with-icon'}),
+        widget= forms.Select(attrs={'class':'select-with-icon text-dark'}),
     )
 
 
@@ -74,9 +74,9 @@ class GuruRegistrationForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'}),
             'password': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter your password'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your phone'}),
-            'experience': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter your experience'}),
-            'profile_information': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter your profile information'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control ', 'placeholder': 'Enter your phone'}),
+            'experience': forms.Textarea(attrs={'class': 'form-control ta', 'placeholder': 'Enter your experience'}),
+            'profile_information': forms.Textarea(attrs={'class': 'form-control ta', 'placeholder': 'Enter your profile information'}),
         }
 
 

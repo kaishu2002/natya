@@ -1,0 +1,96 @@
+{% load static %}
+<html>
+<head>
+    <title>Dance Compositions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Compositions Class</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Cholketu" class="w-full h-64 object-cover" height="400" src="{% static 'images/m3.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Cholketu</h2>
+                    <p class="text-gray-700">Cholketu is traditionally performed as the first item in Mohiniyattam. Cholketu gives the dancer ample scope for the swaying movements that is typical to Laasya the predominant emotion in Mohiniyattam. at the end of which is tagged a poem that is in praise of a deity</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/6VHlttRul5I')">View details</a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Tandav" class="w-full h-64 object-cover" height="400" src="{% static 'images/ta.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Tandav</h2>
+                    <p class="text-gray-700">Dance Day wishes to all! Here is our new video of 'Shiv Tandav' from Bahubali. We hope you enjoy this video and keep up the support!! Thanks again for all the love and response. We couldn't be more greatful!</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/5Gzd4TMc_1o')">View details</a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Thodayam" class="w-full h-64 object-cover" height="400" src="{% static 'images/tho.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Thodayam</h2>
+                    <p class="text-gray-700">Thodayam involves a rich use of facial expressions and hand gestures (mudras) to convey emotions, enhancing the narrative quality of the performance.</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/w8-6xuwdKpo')">View details</a>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Dhanasree Thillana" class="w-full h-64 object-cover" height="400" src="{% static 'images/thi.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Dhanasree Thillana</h2>
+                    <p class="text-gray-700">The Thillana usually consists of a rhythmic sequence that alternates between intricate footwork and graceful upper body movements. It begins with a short prelude that introduces the raga and tala, followed by a series of rhythmic patterns (korvais) that showcase the dancer's prowess.</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/ErtbifqxJwA')">View details</a>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Bho Shambho" class="w-full h-64 object-cover" height="400" src="{% static 'images/bho.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Bho Shambho</h2>
+                    <p class="text-gray-700">Bho Shambho” is a traditional bhajan that expresses deep devotion and reverence towards Lord Shiva, who is often depicted as the embodiment of compassion and grace.</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/fOsP-m_ebuY')">View details</a>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Narumugaye" class="w-full h-64 object-cover" height="400" src="{% static 'images/thi2.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Narumugaye</h2>
+                    <p class="text-gray-700">Narumugaye” is often associated with the deity Lord Krishna and is sung in praise of his divine qualities and playful nature. The term "Narumugaye" can be translated to convey endearment, often reflecting the feelings of a devotee towards Krishna.</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/VSMSMVKvAy0')">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg overflow-hidden w-11/12 md:w-3/4 lg:w-1/2">
+            <div class="flex justify-end p-2">
+                <button class="text-gray-500 hover:text-gray-700" onclick="hideModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <iframe id="modal-iframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(url) {
+            document.getElementById('modal-iframe').src = url;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function hideModal() {
+            document.getElementById('modal-iframe').src = '';
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

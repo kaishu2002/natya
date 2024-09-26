@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+<head>
+    <title>Dance performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Performance</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Cholketu" class="w-full h-64 object-cover" height="400" src="{% static 'images/as.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Aigiri Nandini</h2>
+                    <p class="text-gray-700">Aigiri Nandini is a powerful and popular Sanskrit hymn, also known as Mahishasura Mardini Stotram. It is a devotional song dedicated to Goddess Durga or Chamunda, who is revered as the fierce form of the Divine Mother. The hymn praises her valor, beauty, strength, and her role as the slayer of the demon Mahishasura</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/dNOl4H8LaiI')">View details</a>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Tandav" class="w-full h-64 object-cover" height="400" src="{% static 'images/sw.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Bharathanatya Varnam</h2>
+                    <p class="text-gray-700">Varnam is a pivotal component of a Bharatanatyam performance, often considered the most elaborate and expressive part of a recital. It serves as a bridge between the more abstract elements of dance and the expressive, emotive storytelling that Bharatanatyam is known for.</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/lRmN-V0zwNA')">View details</a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Thodayam" class="w-full h-64 object-cover" height="400" src="{% static 'images/ma.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Maha Ganapathi</h2>
+                    <p class="text-gray-700">Maha Ganapathi is a popular and revered form of Lord Ganesha, the elephant-headed Hindu deity who is widely worshipped as the remover of obstacles, the god of beginnings, and the patron of arts and learning.</p>
+                    <!-- Update the URL to the embed format -->
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/w71hSyYa9aY')">View details</a>
+                </div>
+            </div>
+            
+            
+            <!-- Card 4 -->
+           <!-- Card 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+    <img alt="Dancer performing Dhanasree Thillana" class="w-full h-64 object-cover" height="400" src="{% static 'images/kav.jpg' %}" width="600"/>
+    <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Padi Pattu</h2>
+        <p class="text-gray-700">
+            Padi Pattu songs are dedicated to Lord Ayyappa and performed in worship contexts like the Sabarimala pilgrimage. Dance sometimes accompanies these sacred songs to enhance the devotional atmosphere.
+        </p>
+        <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/ktYJuhAWZ6Q')">View details</a>
+    </div>
+</div>
+
+<!-- Card 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+    <img alt="Dancer performing Bho Shambho" class="w-full h-64 object-cover" height="400" src="{% static 'images/mo2.jpg' %}" width="600"/>
+    <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Mohiniyattam Padam</h2>
+        <p class="text-gray-700">
+            A Padam highlights the emotional and dramatic essence of the dance, where the focus is on Abhinaya (expression), dealing with themes like love, longing, devotion, and divine relationships.
+        </p>
+        <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/ktYJuhAWZ6Q')">View details</a>
+    </div>
+</div>
+
+            <!-- Card 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img alt="Dancer performing Narumugaye" class="w-full h-64 object-cover" height="400" src="{% static 'images/bh4.jpg' %}" width="600"/>
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Krishna Shabdam</h2>
+                    <p class="text-gray-700">Krishna Shabdam is a devotional composition, particularly in Bharatanatyam and Mohiniyattam, praising Lord Krishna, combining both Nritta (pure dance) and Abhinaya (expression).</p>
+                    <a class="text-pink-500 cursor-pointer" onclick="showModal('https://www.youtube.com/embed/SogiVrrhOuE')">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg overflow-hidden w-11/12 md:w-3/4 lg:w-1/2">
+            <div class="flex justify-end p-2">
+                <button class="text-gray-500 hover:text-gray-700" onclick="hideModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <iframe id="modal-iframe" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(url) {
+            document.getElementById('modal-iframe').src = url;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function hideModal() {
+            document.getElementById('modal-iframe').src = '';
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

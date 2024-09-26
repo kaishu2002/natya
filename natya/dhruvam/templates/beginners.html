@@ -1,0 +1,112 @@
+{% load static %}
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      height: 90%;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-roboto">
+  <h1 class="text-3xl font-bold mb-8 text-center">Beginners</h1>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+     <img alt="Kuchipudi dance performance" class="w-full h-80 object-cover" src="{% static 'images/k1.jpg' %}"/>
+     <div class="p-6">
+      <h2 class="text-xl font-bold mb-2">Kuchipudi Beginners Lessons</h2>
+      <p class="text-gray-700 mb-4">Sreelakshmy Govardhanan introduces the viewer to her journey in Kuchipudi...</p>
+      <button class="text-pink-500 font-bold" onclick="openModal('rDROgK67sPw')">View details</button>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+     <img alt="Odissi dance performance" class="w-full h-80 object-cover" src="{% static 'images/os1.jpg' %}"/>
+     <div class="p-6">
+      <h2 class="text-xl font-bold mb-2">Odissi Beginners Lessons</h2>
+      <p class="text-gray-700 mb-4">Sujata Mohapatra gives an overview of Odissi Beginners Lessons...</p>
+      <button class="text-pink-500 font-bold" onclick="openModal('KZkqnt56LJA')">View details</button>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+     <img alt="Mohiniyattam dance performance" class="w-full h-80 object-cover" src="{% static 'images/m1.jpg' %}"/>
+     <div class="p-6">
+      <h2 class="text-xl font-bold mb-2">Mohiniyattam Beginners Lessons</h2>
+      <p class="text-gray-700 mb-4">Dive into the graceful world of Mohiniyattam...</p>
+      <button class="text-pink-500 font-bold" onclick="openModal('kL8Fi605o8U')">View details</button>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+     <img alt="Kathak dance performance" class="w-full h-80 object-cover" src="{% static 'images/ka1.jpg' %}"/>
+     <div class="p-6">
+      <h2 class="text-xl font-bold mb-2">Kathak Beginners Lessons</h2>
+      <p class="text-gray-700 mb-4">Explore the rhythmic world of Kathak...</p>
+      <button class="text-pink-500 font-bold" onclick="openModal('QAEqiWgUl7c')">View details</button>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+     <img alt="Bharatanatyam dance performance" class="w-full h-80 object-cover" src="{% static 'images/b1.jpg' %}"/>
+     <div class="p-6">
+      <h2 class="text-xl font-bold mb-2">Bharatanatyam Beginners Lessons</h2>
+      <p class="text-gray-700 mb-4">Learn the basics of Bharatanatyam...</p>
+      <button class="text-pink-500 font-bold" onclick="openModal('1VsDic1nsBE')">View details</button>
+     </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="myModal">
+   <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <iframe id="videoIframe" style="width: 100%; height: 500px;" frameborder="0" allowfullscreen></iframe>
+   </div>
+  </div>
+
+  <script>
+   function openModal(videoId) {
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("videoIframe").src = "https://www.youtube.com/embed/" + videoId;
+   }
+
+   function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+    document.getElementById("videoIframe").src = "";
+   }
+
+   window.onclick = function(event) {
+    if (event.target == document.getElementById("myModal")) {
+     closeModal();
+    }
+   }
+  </script>
+ </body>
+</html>

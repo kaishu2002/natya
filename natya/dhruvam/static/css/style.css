@@ -46,14 +46,14 @@ video {
 }
 
 .navbar li a {
-    color: white;
+    color: rgb(246, 240, 240);
     text-decoration: none;
     display: block;
 }
 
 /* Add hover effect */
 .navbar li a:hover {
-    background-color: #111;
+    background-color: hsl(0, 10%, 68%);
     color: #fff;
 }
 
@@ -91,7 +91,7 @@ video {
 }
 
 .nav-link {
-    color: #ffffff;
+    color: #f9f3f3;
     text-decoration: none;
 }
 .about-section {
@@ -332,3 +332,8 @@ html, body {
 .carousel-item {
     text-align: center;
 }
+
+
+
+
+

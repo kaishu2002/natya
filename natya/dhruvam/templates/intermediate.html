@@ -1,0 +1,137 @@
+{% load static %}
+<html>
+<head>
+  <title>Intermediate Class</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 914px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      flex-shrink: 0;
+    }
+    .card .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Intermediate Class</h1>
+    <div class="flex flex-wrap -mx-4">
+      <!-- Bharatanatyam Section -->
+      <div class="w-full md:w-1/3 px-4 mb-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+          <img alt="A woman performing Bharatanatyam in traditional attire" class="w-full h-64 object-cover" src="{% static 'images/b3.jpg' %}" />
+          <div class="p-6 content">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">Bharatanatyam Lessons</h2>
+              <p class="text-gray-600 mb-4">This class represents the second stage in the online Bharatanatyam series offered by Guru Pali Chandra...</p>
+            </div>
+            <button onclick="showVideo('https://www.youtube.com/embed/qmlMspToIpc')" class="inline-block bg-white text-pink-500 border border-pink-500 rounded-full px-4 py-2 hover:bg-pink-500 hover:text-white transition">View details</button>
+          </div>
+        </div>
+      </div>
+      <!-- Mohiniyattam Section -->
+      <div class="w-full md:w-1/3 px-4 mb-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+          <img alt="A woman performing Mohiniyattam in traditional attire" class="w-full h-64 object-cover" src="{% static 'images/m2.jpg' %}" />
+          <div class="p-6 content">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">Mohiniyattam Lessons</h2>
+              <p class="text-gray-600 mb-4">This class represents the second stage in the online Mohiniyattam series offered by Guru Pali Chandra...</p>
+            </div>
+            <button onclick="showVideo('https://www.youtube.com/embed/ItF69OVkyqI')" class="inline-block bg-white text-pink-500 border border-pink-500 rounded-full px-4 py-2 hover:bg-pink-500 hover:text-white transition">View details</button>
+          </div>
+        </div>
+      </div>
+      <!-- Kathak Section -->
+      <div class="w-full md:w-1/3 px-4 mb-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden card">
+          <img alt="A woman performing Kathak in traditional attire" class="w-full h-64 object-cover" src="{% static 'images/K2.jpg' %}" />
+          <div class="p-6 content">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">Kathak Lessons</h2>
+              <p class="text-gray-600 mb-4">This class represents the second stage in the online Kathak series offered by Guru Pali Chandra...</p>
+            </div>
+            <button onclick="showVideo('https://www.youtube.com/embed/fFPMDDbGOW0')" class="inline-block bg-white text-pink-500 border border-pink-500 rounded-full px-4 py-2 hover:bg-pink-500 hover:text-white transition">View details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="modalIframe" src="" width="100%" height="514px" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    function showVideo(url) {
+      var modal = document.getElementById("myModal");
+      var iframe = document.getElementById("modalIframe");
+      iframe.src = url;
+      modal.style.display = "block";
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var modal = document.getElementById("myModal");
+        var iframe = document.getElementById("modalIframe");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function () {
+            modal.style.display = "none";
+            iframe.src = "";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                iframe.src = "";
+            }
+        }
+    });
+  </script>
+</body>
+</html>

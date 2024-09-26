@@ -2,67 +2,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guru Registration</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/guru.css' %}" type="text/css">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #d9a7c7, #fffcdc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            width: 1300px;
+            height: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .image-section {
+            flex: 1;
+            background: url("{% static 'images/g7.jpg' %}") no-repeat center center/cover;
+        }
+        .form-section {
+            flex: 1;
+            background: linear-gradient(to Right, #00060b, #18314c);
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+            max-height: 500px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+            margin-top: 680px;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: rgb(201, 220, 235);
+            color:black;
+        }
+        .form-group input[type="date"] {
+            padding-right: 30px;
+        }
+        
+        .ta{
+            width: 100%;
+            border-radius: 20px;
+            background: rgb(201, 220, 235);
+            color:black;
+        }
+        .reg-btn{
+            background: rgb(201, 220, 235);
+            color: black;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 25px;
+            width: 300px;
+            height: 50px;
+        }
+        .reg-btn:hover {
+            background: darkblue;
+        }
+    </style>
 </head>
-<body class="bg-img">
-<div class="container mt-5 ">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header text-center">
-                    <h2>Guru Registration</h2>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+        <div class="form-section">
+            <center><h2>Guru Registration Info</h2></center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
                 </div>
-                <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" class="bg-transparent">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{ form.username.label_tag }}
-                            {{ form.username }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.email.label_tag }}
-                            {{ form.email }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.password.label_tag }}
-                            {{ form.password }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.phone.label_tag }}
-                            {{ form.phone }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.image.label_tag }}
-                            {{ form.image }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.experience.label_tag }}
-                            {{ form.experience }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.dance_style.label_tag }}
-                            {{ form.dance_style }}
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.dance_specialization.label_tag }}
-                            {{ form.dance_specialization }}
-                        </div>
-                        <div class="form-group">
-                            {{ form.profile_information.label_tag }}
-                            {{ form.profile_information }}
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block">Register</button>
-                    </form>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
                 </div>
-            </div>
+                <div class="form-group">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                </div>
+                <div class="form-group">
+                    {{ form.phone.label_tag }}
+                    {{ form.phone }}
+                </div>
+                <div class="form-group">
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                </div>
+                <div class="form-group">
+                    {{ form.experience.label_tag }}
+                    {{ form.experience }}
+                </div>
+                <div class="form-group">
+                    {{ form.dance_style.label_tag }}
+                    {{ form.dance_style }}
+                </div>
+                <div class="form-group">
+                    {{ form.dance_specialization.label_tag }}
+                    {{ form.dance_specialization }}
+                </div>
+                <div class="form-group">
+                    {{ form.profile_information.label_tag }}
+                    {{ form.profile_information }}
+                </div>
+                <center><button type="submit" class="reg-btn">Register</button></center>
+            </form>
         </div>
     </div>
-</div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>

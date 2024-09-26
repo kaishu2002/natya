@@ -1,0 +1,118 @@
+{% load static %}
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Programs
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100 font-roboto">
+  <div class="container mx-auto p-8">
+   <h1 class="text-4xl font-bold text-center mb-8">
+    Programmes
+   </h1>
+   <h2 class="text-center mb-4" style="align-items: center;">
+    A carefully curated classification of our digital archive based on the requirements and training of the viewer. Students shall find lessons as per the extent of their training and art lovers can access compositions of their liking.
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="relative">
+     <img alt="Beginners - Close-up of feet with traditional anklets and a flower" class="w-full h-full object-cover rounded-lg" height="400" src="{% static 'images/cha1.jpg' %}"width="600"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        
+    <a href="{% url 'beginners' %}" class="text-white text-lg font-bold">
+        Beginners
+    </a>
+
+     </div>
+    </div>
+    <div class="relative">
+     <img alt="Intermediate - Close-up of feet with traditional anklets in a dance pose" class="w-full h-full object-cover rounded-lg" src="{% static 'images/ch2.jpg' %}"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        
+        <a href="{% url 'intermediate' %}" class="text-white text-lg font-bold">
+            Intermediate
+        </a>
+        
+
+     </div>
+    </div>
+    <div class="relative">
+     <img alt="Composition - Close-up of hands with traditional jewelry in a dance pose" class="w-full h-full object-cover rounded-lg" height="400" src= "{% static 'images/ch4.jpg' %}"width="600"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        <a href="{% url 'composition' %}" class="text-white text-lg font-bold">
+            Composition
+        </a>
+    
+     </div>
+    </div>
+    <div class="relative">
+     <img alt="Performance Techniques - Dancer in traditional attire with flowing fabric" class="w-full h-full object-cover rounded-lg" height="400" src="{% static 'images/ch5.jpg' %}" width="600"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        <a href="{% url 'performances' %}" class="text-white text-lg font-bold">
+            Performances
+        </a>
+    
+     </div>
+    </div>
+    <div class="relative">
+     <img alt="Techniques - Dancer in traditional attire with flowing fabric" class="w-full h-full object-cover rounded-lg" height="400" src="{% static 'images/ch6.jpg' %}" width="600"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        <a href="{% url 'tenchiques' %}" class="text-white text-lg font-bold">
+            Tenchiques
+        </a>
+     </div>
+    </div>
+    <div class="relative">
+     <img alt="Gita Govinda - Dancer in traditional attire in a forest setting" class="w-full h-full object-cover rounded-lg" height="400" src="{% static 'images/ch8.jpg' %}"width="600"/>
+     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+        <a href="{% url 'gita' %}" class="text-white text-lg font-bold">
+            Gita Govindam
+        </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  
+ <div class="col-md-3 col-sm-12 text-center" style="align-items: center;">
+    <h4>Contact Us</h4>
+    <p>Email: contact@example.com</p>
+    <p>Phone: +123 456 7890</p>
+    <p>Address: 123 Street Name, City, Country</p>
+</div>
+
+
+   <div class="mt-8 text-center">
+    <p class="text-lg font-semibold">
+     About Us
+    </p>
+    <p>
+     NatyaSutra is an attempt to permanently preserve the rich art and cultural heritage of India. Our dream is to provide 24/7 online access to personalized lectures, tutorials, classes, and performances of all Indian art and culture.
+    </p>
+   </div>
+   <div class="mt-8 text-center">
+    <p class="text-lg font-semibold">
+     Follow Us
+    </p>
+    <div class="flex justify-center space-x-4 mt-2">
+     <a class="text-blue-600" href="#">
+      <i class="fab fa-facebook fa-2x">
+      </i>
+     </a>
+     <a class="text-pink-600" href="#">
+      <i class="fab fa-instagram fa-2x">
+      </i>
+     </a>
+     <a class="text-blue-400" href="#">
+      <i class="fab fa-twitter fa-2x">
+      </i>
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

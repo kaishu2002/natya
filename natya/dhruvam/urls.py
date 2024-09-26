@@ -11,12 +11,13 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     # path('cnt',views.cnt),
     path('register', views.register, name='register'),
-    path('logout', views.Logout, name='logout'),
+    path('programs', views.programs, name='programs'),
+    path('logout/', views.Logout, name='logout'),
     path('login', views.doLogin, name='Login'),
     path('cnt', ContactUser.as_view(), name='contact_user'),
     path('contact/', ContactView.as_view(), name='contact'),
-    path('gurureg', views.guru_register, name='guru_register'),
-    path('approve_gurus', ApproveGurusView.as_view(), name='approve_gurus'),
+    path('gurureg/', views.guru_register, name='guru_register'),
+    path('approve_gurus/', ApproveGurusView.as_view(), name='approve_gurus'),
     path('views_users/<int:ut>', views.view_users_and_gurus, name='views_users'),
     path('selectview/', SelectViews.as_view(), name='selectview'),  
     path('profile/', UserProfileView.as_view(), name='profile'),
@@ -34,5 +35,14 @@ urlpatterns = [
     path('add_class', AddClassView.as_view(), name='add_class'),
     path('class_details', views.class_detail_view, name='class_details'),
     path('class_detail/<int:value>',views.class_detail,name='class_detail'),
+    path('beginners/', beginners_view, name='beginners'),
+    path('composition/', composition_view, name='composition'),
+    path('performance/', performances_view, name='performances'),
+    path('intermediate/', intermediate_view, name='intermediate'),
+    path('about', views.about, name='about'),  
+    path('tenchiques/', tenchiques_view, name='tenchiques'),
+    path('gita/', gita_view, name='gita'),
+
+
 
 ]

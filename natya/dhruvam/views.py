@@ -13,7 +13,8 @@ from .models import *
 from django.urls import reverse
 
 # Create your views here.
-
+def programs(request):
+    return render(request,'programs.html')
 class IndexView(TemplateView):
     template_name = 'index.html'
 
@@ -368,3 +369,30 @@ def class_detail(request,value):
         
     classes = DanceClass.objects.filter(dance_style=style)
     return render(request, 'class_detail.html', {'classes': classes})
+
+def beginners_view(request):
+    return render(request, 'beginners.html') 
+
+def intermediate_view(request):
+    return render(request, 'intermediate.html')
+
+
+def composition_view(request):
+    return render(request, 'composition.html') 
+
+def about(request):
+    return render(request, 'about.html')
+
+
+
+def performances_view(request):
+    return render(request, 'performances.html') 
+
+
+def tenchiques_view(request):
+    return render(request, 'tenchiques.html') 
+
+
+def gita_view(request):
+    return render(request, 'gita.html') 
+
