@@ -148,6 +148,7 @@ class DanceClassForm(forms.ModelForm):
         widgets = {
             'title': forms.Textarea(attrs={'rows': 2, 'cols': 65}),
             'video_title': forms.Textarea(attrs={'rows': 5, 'cols': 65}),
+            'video_link': forms.Textarea(attrs={'rows': 5, 'cols': 65}),
             'dance_style': forms.Select(choices=DanceClass.DANCE_STYLES),
             'description': forms.Textarea(attrs={'rows': 8, 'cols': 65}),
             'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),

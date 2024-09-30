@@ -54,7 +54,7 @@ class DanceClass(models.Model):
 
     title = models.CharField(max_length=200)
     video_title = models.TextField(max_length=1000)
-    video_link = models.FileField(upload_to='videos/')
+    video_link = models.URLField()
     dance_style = models.CharField(max_length=50, choices=DANCE_STYLES)
     description = models.TextField()
     image = models.ImageField(upload_to='dance_class_images/', default='')

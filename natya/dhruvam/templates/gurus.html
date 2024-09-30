@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Gurus</title>
+    <style>
+        .guru-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .guru-card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .guru-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .guru-details {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="about-section mb-3">
+    <div class="container">
+        <div class="guru-container">
+            {% for guru in approved_gurus %}
+                <div class="guru-card">
+                    <a href="{% url 'guru_detail' guru.id %}">
+                        {% if guru.image %}
+                            <img src="{{ guru.image.url }}" class="guru-image" alt="{{ guru.name }}">
+                        {% endif %}
+                    </a>
+                    <div class="guru-details">
+                        <h5>{{ guru.username|capfirst }}</h5>
+                        <p>{{ guru.dance_specialization }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

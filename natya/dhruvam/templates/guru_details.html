@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guru Detail</title>
     <style>
         .guru-container {
@@ -20,26 +22,84 @@
             flex: 2;
             padding-left: 20px;
         }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+        }
+        .class-card {
+            width: 100%;
+            max-width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            scroll-snap-align: start;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .class-card:hover {
+            transform: scale(1.05);
+        }
+        .class-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            max-height: 200px;
+            border-radius: 10px 10px 0 0;
+        }
+        .classes-list {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+
     <div class="guru-container">
-        <!-- First Column: Guru Image -->
         <div class="guru-image">
             <img src="{{ guru.image.url }}" alt="{{ guru.username }}">
         </div>
-        
-        <!-- Second Column: Guru Details -->
+
         <div class="guru-details">
             <h1>{{ guru.username|capfirst }}</h1>
             <p>Style: {{ guru.dance_style }}</p>
             <p>Experience: {{ guru.experience }}</p>
             <p>Journey: {{ guru.dance_specialization }}</p>
             <p>Academic Details: {{ guru.profile_information }}</p>
+            
+            <div class="classes-list">
+                <h2>Classes Offered</h2>
+                <div class="carousel">
+                    {% for class in classes %}
+                        <div class="class-card" onclick="redirectToVideo('{{ class.video_link }}')">
+                            <img src="{{ class.image.url }}" alt="{{ class.title }}">
+                            <p>{{ class.title }}</p>
+                        </div>
+                    {% empty %}
+                        <p>No classes available for this guru.</p>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
+    <a href="javascript:history.back()">
+        <i class="fa fa-arrow-left"></i> Back
+    </a>
+    
 
-    <!-- Back to Guru List -->
     <a href="{% url 'index' %}">Back to Home</a>
+
+    <script>
+        function redirectToVideo(videoUrl) {
+            if (!videoUrl) {
+                alert("No video link found.");
+                return;
+            }
+            // Correctly format the URL for redirection
+            window.location.href = "{% url 'video_details' %}?video=" + encodeURIComponent(videoUrl);
+        }
+    </script>
+
 </body>
 </html>

@@ -42,7 +42,9 @@ urlpatterns = [
     path('about', views.about, name='about'),  
     path('tenchiques/', tenchiques_view, name='tenchiques'),
     path('gita/', gita_view, name='gita'),
-
-
+    path('gurus/', ApprovedGurusView.as_view(), name='gurus'),  
+    path('guru/<int:pk>/', GuruDetailView.as_view(), name='guru_detail'),
+    path('video_details/', VideoDetailView.as_view(), name='video_details'),
+    
 
 ]

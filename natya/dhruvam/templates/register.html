@@ -1,88 +1,156 @@
 {% load static %}
-<html>
+<html lang="en">
 <head>
-    <title>User Registration</title>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-image: url("{% static 'images/ka3.jpg' %}");
-            background-size: cover;
-            background-position: center;
             margin: 0;
             padding: 0;
-           
-        }
-        .container {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom,rgb(67 76 83), #000000);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
-        .form-container {
-            padding: 20px;
+        .container {
+            display: flex;
+            width: 1300px;
+            height: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            background-color: transparent;
-            width: 500px;
+            overflow: hidden;
         }
-        .form-container h2 {
-            text-align: center;
+        .image-section {
+            flex: 1;
+            background: url("{% static 'images/ka3.jpg' %}") no-repeat center center/cover;
+        }
+        .form-section {
+            flex: 1;
+            background: linear-gradient(to right, #00060b, #18314c);
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
         }
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+        .form-group label {
+            width: 150px; /* Label width */
+            margin-right: 10px; /* Space between label and input */
+            font-size: 16px;
+            text-align: left;
         }
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container input[type="password"],
-        .form-container input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: white;
-        }
-        .form-container input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
+        .form-group input, .form-group select {
+            flex: 1;
+            padding: 12px;
             border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
+            border-radius: 20px;
+            background: rgb(201, 220, 235);
+            color: black;
+            font-size: 14px;
+        }
+        .form-group input[type="file"] {
+            padding: 8px;
+        }
+        .ta {
+            width: 100%;
+            border-radius: 20px;
+            background: rgb(201, 220, 235);
+            color: black;
+        }
+        .center {
+            display: flex;
+            justify-content: center; /* Horizontally centers the button */
+        }
+        .reg-btn {
+            background: rgb(201, 220, 235);
+            color: black;
             cursor: pointer;
-        }
-        .form-container input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .form-container .login-link {
+            transition: background 0.3s;
+            border-radius: 25px;
+            width: 200px; /* Medium button width */
+            height: 50px;  /* Medium button height */
+            font-size: 16px; /* Medium font size */
+            font-weight: bold;
             text-align: center;
-            margin-top: 10px;
+            line-height: 50px;  /* Vertically centers text inside the button */
+            margin-top: 20px;
         }
-        .form-container .login-link a {
-            color: #007bff;
+        .reg-btn:hover {
+            background: darkblue;
+            color: white;
+        }
+        .login-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .login-link a {
+            color: #6a0dad;
             text-decoration: none;
         }
-        .form-container .login-link a:hover {
+        .login-link a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
-            <h2>Register</h2>
+        <div class="image-section"></div>
+        <div class="form-section">
+            <h2 style="text-align: center;">Register</h2>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Register">
+                
+                <div class="form-group">
+                    <label for="id_username">Username</label>
+                    {{ form.username }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_email">Email address</label>
+                    {{ form.email }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_phone">Phone</label>
+                    {{ form.phone }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    {{ form.password }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_image">Image</label>
+                    {{ form.image }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_confirm_password">Confirm Password</label>
+                    {{ form.confirm_password }}
+                </div>
+    
+                <div class="center">
+                    <input type="submit" value="Register" class="reg-btn">
+                </div>
             </form>
-            <div class="login-link">
+    
+            <div class="login-link" style="text-align: center;">
                 Already have an account? <a href="#">Login here.</a>
             </div>
         </div>
     </div>
 </body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>

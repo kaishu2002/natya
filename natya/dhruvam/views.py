@@ -244,12 +244,20 @@ class GuruViewMore(TemplateView):
 class GuruDetailView(DetailView):
     model = Register
     template_name = 'guru_details.html'
-    context_object_name= 'guru'
+    context_object_name = 'guru'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        approved_gurus = Register.objects.filter(is_approved=True,usertype=2)
+        approved_gurus = Register.objects.filter(is_approved=True, usertype=2)
         context['approved_gurus'] = approved_gurus
+        
+        # Get the current guru object
+        guru = self.get_object()
+        
+        # Filter classes by the guru's dance style
+        classes = DanceClass.objects.filter(dance_style=guru.dance_style)
+        context['classes'] = classes
+        
         return context
  
 
@@ -396,3 +404,34 @@ def tenchiques_view(request):
 def gita_view(request):
     return render(request, 'gita.html') 
 
+class ApprovedGurusView(ListView):
+    model = Register
+    template_name = 'gurus.html'  # This is your template
+    context_object_name = 'approved_gurus'  # This will be used in the template
+
+    def get_queryset(self):
+        return Register.objects.filter(is_approved=True)  
+
+
+def video_gallery(request):
+    videos = [
+        {'title': 'Dance Video 1', 'url': 'https://www.youtube.com/embed/video_id_1'},
+        {'title': 'Dance Video 2', 'url': 'https://www.youtube.com/embed/video_id_2'},
+        {'title': 'Dance Video 3', 'url': 'https://www.youtube.com/embed/video_id_3'},
+        {'title': 'Dance Video 4', 'url': 'https://www.youtube.com/embed/video_id_4'},
+        {'title': 'Dance Video 5', 'url': 'https://www.youtube.com/embed/video_id_5'},
+        {'title': 'Dance Video 6', 'url': 'https://www.youtube.com/embed/video_id_6'},
+    ]
+    return render(request, 'video_gallery.html', {'videos': videos})
+
+
+class VideoDetailView(View):
+    def get(self, request):
+        # Retrieve the video URL from the query parameters
+        video_url = request.GET.get('video')
+
+        # Pass the video URL to the template
+        context = {
+            'video_url': video_url
+        }
+        return render(request, 'video_details.html', context)
